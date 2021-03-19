@@ -1,5 +1,5 @@
 ---
-description: Welcome to the official documentation for the Krypton API!
+description: The official documentation for the Krypton API!
 ---
 
 # Introduction
