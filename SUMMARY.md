@@ -2,7 +2,9 @@
 
 * [Introduction](README.md)
 
-## Core fundamentals
+## Core fundamentals <a id="core"></a>
+
+* [Getting Started](core/getting-started.md)
 
 ## Events and listeners <a id="events"></a>
 
