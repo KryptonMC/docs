@@ -5,7 +5,8 @@ So, you've checked out the project and want to crack on making your first plugin
 You can depend on the API through your build system of choice:
 
 * Gradle Groovy:
-```
+
+```groovy
 repositories {
     mavenCentral()
 	maven { url 'https://libraries.minecraft.net }
@@ -18,7 +19,8 @@ dependencies {
 ```
 
 * Gradle Kotlin:
-```
+
+```kotlin
 repositories {
     mavenCentral()
 	maven("https://libraries.minecraft.net")
@@ -31,7 +33,8 @@ dependencies {
 ```
 
 * Maven:
-```
+
+```xml
 <repositories>
     <repository>
 	    <id>minecraft</id>
