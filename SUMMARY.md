@@ -5,6 +5,7 @@
 ## Core fundamentals <a id="core"></a>
 
 * [Getting Started](core/getting-started.md)
+* [Commands](core/commands.md)
 
 ## Events and listeners <a id="events"></a>
 

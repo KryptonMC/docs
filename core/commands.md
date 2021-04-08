@@ -9,9 +9,9 @@ You can use them something like this:
 ```kotlin
 class MyCommand : Command(name = "test", permission = "test.permission", aliases = setOf("hello", "world")) {
 
-	override suspend fun execute(sender: Sender, args: List<String>) {
-		sender.sendMessage(Component.text("Hello there! This is a test command!"))
-	}
+    override suspend fun execute(sender: Sender, args: List<String>) {
+        sender.sendMessage(Component.text("Hello there! This is a test command!"))
+    }
 }
 ```
 
@@ -21,6 +21,7 @@ That works something like this:
 
 ```kotlin
 override fun suggest(sender: Sender, args: List<String>): List<String> {
-	return listOf("hello", "world")
+    return listOf("hello", "world")
 }
 ```
+
