@@ -9,8 +9,8 @@ You can depend on the API through your build system of choice:
 ```groovy
 repositories {
     mavenCentral()
-    maven { url 'https://libraries.minecraft.net }
-    maven { url 'https://repo.bristermitten.me/repository/maven-public/ }
+    maven { url 'https://libraries.minecraft.net' }
+    maven { url 'https://repo.bristermitten.me/repository/maven-public/' }
 }
 
 dependencies {
