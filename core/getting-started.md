@@ -8,13 +8,11 @@ You can depend on the API through your build system of choice:
 
 ```groovy
 repositories {
-    mavenCentral()
-    maven { url 'https://libraries.minecraft.net' }
-    maven { url 'https://repo.bristermitten.me/repository/maven-public/' }
+    maven { url 'https://repo.kryptonmc.org/releases' }
 }
 
 dependencies {
-    compileOnly 'org.kryptonmc:krypton-api:LATEST'
+    compileOnly 'org.kryptonmc:api:LATEST'
 }
 ```
 
@@ -22,34 +20,28 @@ dependencies {
 
 ```kotlin
 repositories {
-    mavenCentral()
-    maven("https://libraries.minecraft.net")
-    maven("https://repo.bristermitten.me/repository/maven-public/")
+    maven("https://repo.kryptonmc.org/releases")
 }
 
 dependencies {
-    compileOnly("org.kryptonmc:krypton-api:LATEST")
+    compileOnly("org.kryptonmc:api:LATEST")
 }
 ```
 
 * Maven:
 
-```markup
+```xml
 <repositories>
     <repository>
-        <id>minecraft</id>
-        <url>https://libraries.minecraft.net</url>
-    </repository>
-    <repository>
-        <id>bristermitten</id>
-        <url>https://repo.bristermitten.me/repository/maven-public/</url>
+        <id>krypton-repo</id>
+        <url>https://repo.kryptonmc.org/releases</url>
     </repository>
 </repositories>
 
 <dependencies>
     <dependency>
         <groupId>org.kryptonmc</groupId>
-        <artifactId>krypton-api</artifactId>
+        <artifactId>api</artifactId>
         <version>LATEST</version>
     </dependency>
 </dependencies>
