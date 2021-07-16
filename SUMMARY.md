@@ -1,11 +1,12 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [Getting Started](getting-started.md)
 
-## Core fundamentals <a id="core"></a>
+## The Basics <a id="basics"></a>
 
-* [Getting Started](core/getting-started.md)
-* [Commands](core/commands.md)
+* [Blocks](basics/blocks.md)
+* [Commands](basics/commands.md)
 
 ## Events and listeners <a id="events"></a>
 

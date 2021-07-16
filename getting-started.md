@@ -30,7 +30,7 @@ dependencies {
 
 * Maven:
 
-```xml
+```markup
 <repositories>
     <repository>
         <id>krypton-repo</id>
