@@ -9,7 +9,10 @@ system of choice (recommend and supported), or directly using your IDE (not reco
 
 Here are some examples for different build systems of how you can depend on the API in your project:
 
-* Gradle, Kotlin DSL:
+### Gradle
+
+#### Kotlin DSL
+
 ```kotlin
 repositories {
     maven("https://repo.kryptonmc.org/releases")
@@ -20,7 +23,8 @@ dependencies {
 }
 ```
 
-* Gradle, Groovy DSL:
+#### Groovy DSL
+
 ```groovy
 repositories {
     maven { url 'https://repo.kryptonmc.org/releases' }
@@ -31,8 +35,9 @@ dependencies {
 }
 ```
 
-* Maven:
-```markup
+### Maven
+
+```xml
 <repositories>
     <repository>
         <id>krypton-repo</id>
@@ -53,7 +58,8 @@ dependencies {
 
 After adding the API as a dependency, creating your first plugin is fairly simple. Let's try learning by example:
 
-* Kotlin:
+### Kotlin
+
 ```kotlin
 package my.first.plugin
 
@@ -81,7 +87,8 @@ class MyPlugin @Inject constructor(
 }
 ```
 
-* Java:
+### Java
+
 ```java
 package my.first.plugin;
 
