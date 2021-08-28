@@ -9,10 +9,8 @@ system of choice (recommend and supported), or directly using your IDE (not reco
 
 Here are some examples for different build systems of how you can depend on the API in your project:
 
-### Gradle
-
-#### Kotlin DSL
-
+{% tabs %}
+{% tab title="Gradle - Kotlin DSL" %}
 ```kotlin
 repositories {
     maven("https://repo.kryptonmc.org/releases")
@@ -22,9 +20,9 @@ dependencies {
     compileOnly("org.kryptonmc:api:LATEST")
 }
 ```
+{% endtab %}
 
-#### Groovy DSL
-
+{% tab title="Gradle - Groovy DSL" %}
 ```groovy
 repositories {
     maven { url 'https://repo.kryptonmc.org/releases' }
@@ -34,9 +32,9 @@ dependencies {
     compileOnly 'org.kryptonmc:api:LATEST'
 }
 ```
+{% endtab %}
 
-### Maven
-
+{% tab title="Maven" %}
 ```xml
 <repositories>
     <repository>
@@ -53,13 +51,15 @@ dependencies {
     </dependency>
 </dependencies>
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Creating your first plugin
 
 After adding the API as a dependency, creating your first plugin is fairly simple. Let's try learning by example:
 
-### Kotlin
-
+{% tabs %}
+{% tab title="Kotlin" %}
 ```kotlin
 package my.first.plugin
 
@@ -86,9 +86,9 @@ class MyPlugin @Inject constructor(
     }
 }
 ```
+{% endtab %}
 
-### Java
-
+{% tab title="Java" %}
 ```java
 package my.first.plugin;
 
@@ -121,6 +121,8 @@ public final class MyPlugin {
     }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 Now, you might be thinking, "what the hell is that? what does this do?" well, let's break it down:
 
