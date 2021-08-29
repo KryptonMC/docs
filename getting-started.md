@@ -127,6 +127,7 @@ public final class MyPlugin {
 ## Adding in a plugin.conf so your plugin is recognized.
 
 plugin.conf is required for any plugin with Krypton to load. An example below of what you can put in it. This would go in the same place where plugin.yml goes. *src/main/resources*
+
 ```
 id = "your-project-id"
 name = "your-project-name"
@@ -134,11 +135,8 @@ version = "your-project-version"
 description = "your-project-description"
 main = "your-project-path-class"
 
-dependencies
- - "your-dependencies-here" # the plugin-id people use in the plugin.conf
-authors
- - "your-name-here"
- - "The other rapscallion helping you out"
+dependencies = [dependency1,dependency2]
+authors = [your-name-here, the other rapscallion helping you out]
 ```
 
 ## Now, you might be thinking, "what the hell is that? what does this do?" well, let's break it down
