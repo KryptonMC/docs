@@ -115,4 +115,59 @@ You can modify player profiles using the `AuthenticationEvent`. This event will 
 the request to authenticate the `name` with Mojang, and setting its result can change the profile that will be used
 for the user. Passing `null` to the result will use the authenticated profile.
 
-TODO: Allow for creating new `GameProfile` objects to provide as the result of the `AuthenticationEvent`.
+To construct your own `GameProfile` instances, you can use the `of` factory functions. For example, to construct a new
+`GameProfile` with name "Bob" and UUID "17c2482e-1e21-46a6-ba2a-daf55a136fec" (randomly generated), you could do
+`GameProfile.of("Bob", UUID.fromString("17c2482e-1e21-46a6-ba2a-daf55a136fec"))`.
+
+An example of how to use this to modify profiles in the authentication event is as follows:
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+package my.plugin
+
+import com.google.inject.Inject
+import java.util.UUID
+import org.apache.logging.log4j.Logger
+import org.kryptonmc.api.auth.GameProfile
+import org.kryptonmc.api.event.auth.AuthenticationEvent
+import org.kryptonmc.api.plugin.annotation.Plugin
+
+@Plugin("my-plugin")
+class MyPlugin {
+
+    @Listener
+    fun onAuthentication(event: AuthenticationEvent) {
+        // Create a profile for Bob
+        val profile = GameProfile.of("Bob", UUID.fromString("17c2482e-1e21-46a6-ba2a-daf55a136fec"))
+        event.result = AuthenticationResult.allowed(profile) // Set the result of the event
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Java" %}
+```java
+package my.plugin;
+
+import com.google.inject.Inject;
+import java.util.UUID;
+import org.apache.logging.log4j.Logger;
+import org.kryptonmc.api.auth.GameProfile;
+import org.kryptonmc.api.event.auth.AuthenticationEvent;
+import org.kryptonmc.api.event.auth.AuthenticationResult;
+import org.kryptonmc.api.plugin.annotation.Plugin;
+
+@Plugin(id = "my-plugin")
+public final class MyPlugin {
+
+    @Listener
+    public void onAuthentication(final AuthenticationEvent event) {
+        // Create a profile for Bob
+        final GameProfile profile = GameProfile.of("Bob", UUID.fromString("17c2482e-1e21-46a6-ba2a-daf55a136fec"));
+        event.setResult(AuthenticationResult.allowed(profile)); // Set the result of the event
+    }
+}
+```
+{% endtab %}
+{% endtabs %}
