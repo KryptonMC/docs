@@ -124,7 +124,24 @@ public final class MyPlugin {
 {% endtab %}
 {% endtabs %}
 
-Now, you might be thinking, "what the hell is that? what does this do?" well, let's break it down:
+## Adding in a plugin.conf so your plugin is recognized.
+
+plugin.conf is required for any plugin with Krypton to load. An example below of what you can put in it.
+```
+id = "your-project-id"
+name = "your-project-name"
+version = "your-project-version"
+description = "your-project-description"
+main = "your-project-path-class"
+
+dependencies
+ - "your-dependencies-here" # the plugin-id people use in the plugin.conf
+authors
+ - "your-name-here"
+ - "The other rapscallion helping you out"
+```
+
+## Now, you might be thinking, "what the hell is that? what does this do?" well, let's break it down
 
 First, we declare a new class that has the `Plugin` annotation. This annotation marks this class as the main
 class for our plugin, which will be loaded by the server on startup. This contains some important details, like
