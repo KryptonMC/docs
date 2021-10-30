@@ -5,3 +5,4 @@
 * [Adventure](adventure.md)
 * [Profiles](profiles.md)
 * [Blocks](blocks.md)
+* [Commands](commands.md)
