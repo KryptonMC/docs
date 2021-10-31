@@ -12,24 +12,46 @@ Here are some examples for different build systems of how you can depend on the 
 {% tabs %}
 {% tab title="Gradle - Kotlin DSL" %}
 ```kotlin
+plugins {
+    // If using Kotlin, you need these:
+    kotlin("jvm") version "1.5.31"
+    kotlin("kapt") version "1.5.31"
+
+    // If using Java, you only need this:
+    java
+}
+
 repositories {
     maven("https://repo.kryptonmc.org/releases")
 }
 
 dependencies {
-    compileOnly("org.kryptonmc:api:LATEST")
+    compileOnly("org.kryptonmc", "krypton-api", "LATEST")
+    kapt("org.kryptonmc", "krypton-annotation-processor", "LATEST") // Kotlin only
+    annotationProcessor("org.kryptonmc", "krypton-annotation-processor", "LATEST") // Java only
 }
 ```
 {% endtab %}
 
 {% tab title="Gradle - Groovy DSL" %}
 ```groovy
+plugins {
+    // If using Kotlin, you need these:
+    id 'org.jetbrains.kotlin.jvm' version '1.5.31'
+    id 'org.jetbrains.kotlin.kapt' version '1.5.31'
+
+    // If using Java, you need this:
+    id 'java'
+}
+
 repositories {
     maven { url 'https://repo.kryptonmc.org/releases' }
 }
 
 dependencies {
-    compileOnly 'org.kryptonmc:api:LATEST'
+    compileOnly 'org.kryptonmc:krypton-api:LATEST'
+    kapt 'org.kryptonmc:krypton-annotation-processor:LATEST' // Kotlin only
+    annotationProcessor 'org.kryptonmc:krypton-annotation-processor:LATEST' // Java only
 }
 ```
 {% endtab %}
@@ -38,7 +60,7 @@ dependencies {
 ```xml
 <repositories>
     <repository>
-        <id>krypton-repo</id>
+        <id>krypton</id>
         <url>https://repo.kryptonmc.org/releases</url>
     </repository>
 </repositories>
@@ -46,8 +68,9 @@ dependencies {
 <dependencies>
     <dependency>
         <groupId>org.kryptonmc</groupId>
-        <artifactId>api</artifactId>
+        <artifactId>krypton-api</artifactId>
         <version>LATEST</version>
+        <scope>provided</scope>
     </dependency>
 </dependencies>
 ```
