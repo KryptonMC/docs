@@ -14,8 +14,8 @@ Here are some examples for different build systems of how you can depend on the 
 ```kotlin
 plugins {
     // If using Kotlin, you need these:
-    kotlin("jvm") version "1.5.31"
-    kotlin("kapt") version "1.5.31"
+    kotlin("jvm") version "1.6.0"
+    kotlin("kapt") version "1.6.0"
 
     // If using Java, you only need this:
     java
@@ -37,8 +37,8 @@ dependencies {
 ```groovy
 plugins {
     // If using Kotlin, you need these:
-    id 'org.jetbrains.kotlin.jvm' version '1.5.31'
-    id 'org.jetbrains.kotlin.kapt' version '1.5.31'
+    id 'org.jetbrains.kotlin.jvm' version '1.6.0'
+    id 'org.jetbrains.kotlin.kapt' version '1.6.0'
 
     // If using Java, you need this:
     id 'java'
